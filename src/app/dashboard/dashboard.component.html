@@ -1,0 +1,70 @@
+<div class="dashboard-container">
+
+  <div class="summary-cards">
+    <div class="card">Total Events: {{ totalEvents }}</div>
+    <div class="card">Total Attendees: {{ totalAttendees }}</div>
+  </div>
+
+  <section>
+    <h2>Add Event</h2>
+    <form (ngSubmit)="addEvent()">
+      <input [(ngModel)]="newEvent.name" name="eventName" placeholder="Event Name" required>
+      <input [(ngModel)]="newEvent.description" name="description" placeholder="Description" required>
+      <input [(ngModel)]="newEvent.date" name="date" type="date" required>
+      <select [(ngModel)]="newEvent.type" name="type" required>
+        <option *ngFor="let type of eventTypes" [value]="type">{{ type }}</option>
+      </select>
+      <button type="submit">Add Event</button>
+    </form>
+
+    <h2>Events</h2>
+    <label>Filter by Type: 
+      <select [(ngModel)]="filterType">
+        <option value="">All</option>
+        <option *ngFor="let type of eventTypes">{{ type }}</option>
+      </select>
+    </label>
+
+    <table>
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Type</th>
+          <th>Date</th>
+          <th>Attendees</th>
+          <th>Actions</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let event of filteredEvents">
+          <td>{{ event.name }}</td>
+          <td>{{ event.type }}</td>
+          <td>{{ event.date }}</td>
+          <td>{{ event.attendees }}</td>
+          <td><button (click)="deleteEvent(event.id)">Delete</button></td>
+        </tr>
+      </tbody>
+    </table>
+  </section>
+
+  <section>
+    <h2>Register Attendee</h2>
+    <form (ngSubmit)="addAttendee()">
+      <input [(ngModel)]="newAttendee.name" name="attendeeName" placeholder="Name" required>
+      <input [(ngModel)]="newAttendee.email" name="attendeeEmail" placeholder="Email" required>
+      <input [(ngModel)]="newAttendee.phone" name="attendeePhone" placeholder="Phone" required>
+      <select [(ngModel)]="newAttendee.eventId" name="eventId" required>
+        <option value="">Select Event</option>
+        <option *ngFor="let event of events" [value]="event.id">{{ event.name }}</option>
+      </select>
+      <button type="submit">Add Attendee</button>
+    </form>
+
+    <h2>Attendees</h2>
+    <ul>
+      <li *ngFor="let attendee of attendees">
+        {{ attendee.name }} - {{ attendee.email }} - (Event: {{ getEventName(attendee.eventId) }})
+      </li>
+    </ul>
+  </section>
+</div>

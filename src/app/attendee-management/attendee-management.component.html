@@ -1,0 +1,40 @@
+<div class="attendee-container">
+  <h2>Attendee Management</h2>
+
+
+  <div class="add-attendee">
+    <input type="text" [(ngModel)]="newAttendee.name" placeholder="Attendee Name" />
+    <input type="email" [(ngModel)]="newAttendee.email" placeholder="Attendee Email" />
+    <button (click)="addAttendee()">Add Attendee</button>
+  </div>
+
+ 
+  <table>
+    <thead>
+      <tr>
+        <th>ID</th>
+        <th>Name</th>
+        <th>Email</th>
+        <th>Status</th>
+        <th>Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let attendee of attendees">
+        <td>{{ attendee.id }}</td>
+        <td>{{ attendee.name }}</td>
+        <td>{{ attendee.email }}</td>
+        <td>
+          <select [(ngModel)]="attendee.status" (change)="updateStatus(attendee, attendee.status)">
+            <option value="Registered">Registered</option>
+            <option value="Checked-In">Checked-In</option>
+            <option value="Cancelled">Cancelled</option>
+          </select>
+        </td>
+        <td>
+          <button class="delete-btn" (click)="deleteAttendee(attendee.id)">Delete</button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>

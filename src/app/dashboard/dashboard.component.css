@@ -1,0 +1,50 @@
+.dashboard-container {
+  padding: 20px;
+  font-family: Arial, sans-serif;
+}
+
+.summary-cards {
+  display: flex;
+  gap: 20px;
+  margin-bottom: 20px;
+}
+
+.card {
+  flex: 1;
+  padding: 20px;
+  background: linear-gradient(90deg, #8FB6B3 0%, #6C9F9C 50%, #588A87 100%);
+  color: white;
+  font-size: 18px;
+  font-weight: bold;
+  border-radius: 10px;
+  text-align: center;
+}
+
+form {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 20px;
+  flex-wrap: wrap;
+}
+
+form input, form select, form button {
+  padding: 10px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 10px;
+}
+
+table, th, td {
+  border: 1px solid #ddd;
+  padding: 10px;
+}
+
+table th {
+  background: #588A87;
+  color: white;
+}

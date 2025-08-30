@@ -1,0 +1,23 @@
+<div class="container">
+  <h2>Event Management</h2>
+
+  <form (ngSubmit)="addEvent()" class="event-form">
+    <input type="text" [(ngModel)]="newEvent.title" name="title" placeholder="Event Title" required />
+    <input type="date" [(ngModel)]="newEvent.date" name="date" required />
+    <input type="text" [(ngModel)]="newEvent.location" name="location" placeholder="Location" />
+    <textarea [(ngModel)]="newEvent.description" name="description" placeholder="Description"></textarea>
+    <button type="submit">{{ editMode ? 'Update Event' : 'Add Event' }}</button>
+  </form>
+
+
+  <div class="event-list">
+    <div *ngFor="let event of events" class="event-card">
+      <h3>{{ event.title }}</h3>
+      <p><strong>Date:</strong> {{ event.date }}</p>
+      <p><strong>Location:</strong> {{ event.location }}</p>
+      <p>{{ event.description }}</p>
+      <button (click)="editEvent(event)">Edit</button>
+      <button (click)="deleteEvent(event.id)">Delete</button>
+    </div>
+  </div>
+</div>

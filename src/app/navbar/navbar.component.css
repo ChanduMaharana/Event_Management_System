@@ -1,0 +1,95 @@
+ header {
+            margin: 0;
+            padding: 0 20px;
+            background: white;
+            color: #588A87;
+            width: auto;
+            height: 70px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0 2px 15px rgba(0, 0, 0, 0.08);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+        .login-btn{
+            background-color: #588A87;
+            color: #FFFF;
+            height: 30px;
+            width: 75px;
+            font-size: 16px;
+            margin: 45px;
+            font-weight: 500;
+            text-decoration: none;
+            border: none;
+            border-radius: 5px;
+        }
+        .login-btn:hover{
+            background-color: #FFFF;
+            color: #588A87;
+            border: 1px solid #588A87;
+        }
+        .register-btn{
+            color: #588A87;
+            height: 30px;
+            width: 75px;
+            font-size: 16px;
+            background-color: #FFFF;
+            font-weight: 500;
+            text-decoration: none;
+            border: 1px solid #588A87;
+            border-radius: 5px;
+        }.register-btn:hover{
+            color: #FFFF;
+            background-color: #588A87;
+            border-radius: 5px;
+            border: none;
+        }
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            align-items: center;
+        }
+
+        header div {
+            display: flex;
+            align-items: center;
+            width: 100%;
+        }
+
+        header a {
+            color: #588A87;
+            font-size: 16px;
+            font-weight: 500;
+             margin: 50px;
+            text-decoration: none;
+            padding: 0 18px;
+            position: relative;
+            cursor: pointer;
+            line-height: 70px;
+            transition: all 0.3s ease;
+        }
+
+        header a::after {
+            content: "";
+            position: absolute;
+            left: 20%;
+            bottom: 20px;
+            width: 0;
+            height: 3px;
+            background: #588A87;
+            transition: width 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            border-radius: 2px;
+        }
+
+        header a:hover::after {
+            width: 60%;
+        }
+
+        header a:hover {
+            color: #4a7875;
+            transform: translateY(-2px);
+        }

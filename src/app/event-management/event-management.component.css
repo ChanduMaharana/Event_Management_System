@@ -1,0 +1,65 @@
+.container {
+  max-width: 800px;
+  margin: auto;
+  padding: 20px;
+}
+
+.event-form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.event-form input, .event-form textarea {
+  padding: 8px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+}
+
+.event-form button {
+  padding: 10px;
+  border: none;
+  border-radius: 6px;
+  background-color: #4CAF50;
+  color: white;
+  cursor: pointer;
+}
+
+.event-form button:hover {
+  background-color: #45a049;
+}
+
+.event-list {
+  display: grid;
+  gap: 15px;
+}
+
+.event-card {
+  padding: 15px;
+  border-radius: 8px;
+  background: #f9f9f9;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+}
+
+.event-card h3 {
+  margin: 0 0 5px;
+}
+
+.event-card button {
+  margin-right: 10px;
+  padding: 6px 10px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.event-card button:first-of-type {
+  background: #2196F3;
+  color: white;
+}
+
+.event-card button:last-of-type {
+  background: #f44336;
+  color: white;
+}
