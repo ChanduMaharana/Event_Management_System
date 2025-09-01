@@ -6,6 +6,7 @@ export interface Attendees {
   id: number;
   name: string;
   email: string;
+  phone:number;
   status: 'Registered' | 'Checked-In' | 'Cancelled';
 }
 
@@ -18,18 +19,22 @@ export interface Attendees {
 })
 export class AttendeeManagementComponent {
   attendees: Attendees[] = [
-    { id: 1, name: 'Alice Johnson', email: 'alice@gmail.com', status: 'Registered' },
-    { id: 2, name: 'Bob Smith', email: 'bob@yahoo.com', status: 'Checked-In' },
-    { id: 3, name: 'Charlie Brown', email: 'charlie@outlook.com', status: 'Cancelled' }
+    { id: 1, name: 'Alice Johnson', email: 'alice@gmail.com',phone:8774803232, status: 'Registered' },
+    { id: 2, name: 'Bob Smith', email: 'bob@yahoo.com',phone:8774803232, status: 'Checked-In' },
+    { id: 3, name: 'Charlie Brown', email: 'charlie@outlook.com',phone:8774803232, status: 'Cancelled' }
   ];
 
-  newAttendee: Attendees = { id: 0, name: '', email: '', status: 'Registered' };
+  newAttendee: Attendees = { id: 0,
+    name:'',
+    email:'',
+    phone:0,
+    status: 'Registered' };
 
   addAttendee() {
     if (this.newAttendee.name && this.newAttendee.email) {
       this.newAttendee.id = this.attendees.length + 1;
       this.attendees.push({ ...this.newAttendee });
-      this.newAttendee = { id: 0, name: '', email: '', status: 'Registered' };
+      this.newAttendee = { id: 0, name: '', email: '',phone:0, status: 'Registered' };
     }
   }
 

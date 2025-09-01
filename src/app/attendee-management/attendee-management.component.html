@@ -1,11 +1,10 @@
+ <h2>Attendee Management</h2>
 <div class="attendee-container">
-  <h2>Attendee Management</h2>
-
-
   <div class="add-attendee">
-    <input type="text" [(ngModel)]="newAttendee.name" placeholder="Attendee Name" />
-    <input type="email" [(ngModel)]="newAttendee.email" placeholder="Attendee Email" />
-    <button (click)="addAttendee()">Add Attendee</button>
+    <input class="input-text" type="text" [(ngModel)]="newAttendee.name" placeholder="Attendee Name" />
+    <input class="input-text" type="email" [(ngModel)]="newAttendee.email" placeholder="Attendee Email" />
+    <input class="input-text" type="email" [(ngModel)]="newAttendee.phone" placeholder="phone number" />
+    <button class="input-text" (click)="addAttendee()">Add Attendee</button>
   </div>
 
  
@@ -25,7 +24,7 @@
         <td>{{ attendee.name }}</td>
         <td>{{ attendee.email }}</td>
         <td>
-          <select [(ngModel)]="attendee.status" (change)="updateStatus(attendee, attendee.status)">
+          <select [(ngModel)]="attendee.status" class="check-box" (change)="updateStatus(attendee, attendee.status)">
             <option value="Registered">Registered</option>
             <option value="Checked-In">Checked-In</option>
             <option value="Cancelled">Cancelled</option>

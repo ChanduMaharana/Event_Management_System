@@ -11,4 +11,12 @@ import { HomeComponent } from './home/home.component';
 })
 export class AppComponent {
   title = 'EventManagementSystem';
+
+  isLoggedOut = false;
+
+  
+  logOut() {
+    this.isLoggedOut = true;
+  }
+
 }

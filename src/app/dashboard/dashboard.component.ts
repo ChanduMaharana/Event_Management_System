@@ -15,7 +15,7 @@ interface Event{
 interface Attendees{
   name: string;
   email: string;
-  phone: string;
+  phone: number;
   eventId: number;
 }
 @Component({
@@ -44,7 +44,7 @@ export class DashboardComponent {
     newAttendee: Attendees = {
       name:'',
       email:'',
-      phone:'',
+      phone:0,
       eventId:0
     };
 
@@ -64,7 +64,7 @@ export class DashboardComponent {
       const event = this.events.find(e => e.id === this.newAttendee.eventId);
       if(event)event.attendees++;
       this.totalAttendees = this.attendees.length;
-      this.newAttendee = {name:'', email:'', phone:'', eventId:0};
+      this.newAttendee = {name:'', email:'', phone:0 , eventId:0};
     }
 
     get filteredEvents(){
